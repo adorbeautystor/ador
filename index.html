@@ -1,0 +1,2887 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eaf7ef">
+  <meta name="description" content="فروشگاه محصولات مراقبت از پوست آدور؛ محصولات آرایشی، بهداشتی، مراقبت پوست و مو، جوانساز و عطرهای اورجینال اروپایی.">
+  <title>آدور | زیبایی و جوانی با محصولات اورجینال</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fcf9;
+      --surface: #ffffff;
+      --surface-soft: #eef8f1;
+      --green: #4d9a70;
+      --green-dark: #236443;
+      --green-deep: #174b32;
+      --green-light: #d9f0df;
+      --text: #173225;
+      --muted: #718178;
+      --gold: #b99859;
+      --border: rgba(39, 102, 68, .12);
+      --shadow: 0 18px 55px rgba(31, 86, 57, .10);
+      --shadow-lg: 0 30px 80px rgba(28, 81, 54, .16);
+      --radius: 24px;
+      --radius-lg: 34px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background:
+        radial-gradient(circle at 90% 5%, rgba(190, 228, 203, .28), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 82px 0;
+      position: relative;
+    }
+
+    .section-head {
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      margin-bottom: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--green);
+      border-radius: 5px;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.35;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 10vw, 4.7rem);
+      letter-spacing: -.04em;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      letter-spacing: -.025em;
+    }
+
+    h3 {
+      font-size: 1.12rem;
+    }
+
+    .section-title {
+      max-width: 650px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      margin-top: 12px;
+      max-width: 650px;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      min-height: 50px;
+      padding: 12px 21px;
+      border-radius: 16px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      font-weight: 700;
+      transition: .3s ease;
+      font-size: .92rem;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--green-dark);
+      color: white;
+      box-shadow: 0 12px 30px rgba(35, 100, 67, .2);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-deep);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px rgba(35, 100, 67, .27);
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--border);
+      color: var(--green-dark);
+    }
+
+    .btn-light:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    .btn-gold {
+      background: #b99859;
+      color: white;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      filter: brightness(.95);
+    }
+
+    .topbar {
+      background: var(--green-deep);
+      color: #eaf6ee;
+      font-size: .72rem;
+      padding: 7px 0;
+      text-align: center;
+    }
+
+    header {
+      height: 76px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(248,252,249,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition: .3s ease;
+    }
+
+    header.scrolled {
+      box-shadow: 0 8px 35px rgba(20, 68, 43, .08);
+      border-color: var(--border);
+    }
+
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      border-radius: 50% 50% 50% 12px;
+      background: linear-gradient(145deg, #9bd0ad, #3e8d62);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      transform: rotate(-8deg);
+      box-shadow: 0 7px 20px rgba(54, 130, 83, .2);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1.2rem;
+      line-height: 1;
+      color: var(--green-deep);
+    }
+
+    .brand-text small {
+      color: var(--muted);
+      font-size: .58rem;
+      display: block;
+      margin-top: 3px;
+    }
+
+    .desktop-menu {
+      display: none;
+      align-items: center;
+      gap: 25px;
+      color: #51675b;
+      font-size: .85rem;
+      font-weight: 500;
+    }
+
+    .desktop-menu a {
+      position: relative;
+      transition: .25s;
+    }
+
+    .desktop-menu a:hover {
+      color: var(--green-dark);
+    }
+
+    .desktop-menu a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: var(--green);
+      transition: .25s;
+    }
+
+    .desktop-menu a:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: var(--green-dark);
+      font-size: 1.25rem;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      background: rgba(15,48,32,.45);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s;
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(88%, 390px);
+      height: 100%;
+      background: #f9fdf9;
+      padding: 28px 24px;
+      transform: translateX(100%);
+      transition: .4s cubic-bezier(.22,1,.36,1);
+      box-shadow: -20px 0 60px rgba(0,0,0,.12);
+    }
+
+    .mobile-menu.active .mobile-panel {
+      transform: translateX(0);
+    }
+
+    .mobile-close {
+      border: 0;
+      background: transparent;
+      font-size: 1.6rem;
+      color: var(--green-dark);
+      cursor: pointer;
+      margin-bottom: 40px;
+    }
+
+    .mobile-links a {
+      display: block;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+
+    .mobile-panel .btn {
+      width: 100%;
+      margin-top: 28px;
+    }
+
+    .hero {
+      min-height: calc(100svh - 100px);
+      display: flex;
+      align-items: center;
+      padding: 45px 0 70px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      border-radius: 30px;
+      background: rgba(220,241,226,.7);
+      color: var(--green-dark);
+      font-size: .75rem;
+      font-weight: 700;
+      margin-bottom: 17px;
+      border: 1px solid rgba(80,148,104,.12);
+    }
+
+    .hero-kicker span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #58a977;
+      box-shadow: 0 0 0 5px rgba(88,169,119,.12);
+    }
+
+    .hero h1 {
+      color: var(--green-deep);
+      max-width: 720px;
+    }
+
+    .hero h1 em {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    .hero-description {
+      color: #697a70;
+      font-size: .96rem;
+      max-width: 580px;
+      margin: 18px 0 25px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 30px;
+      max-width: 620px;
+    }
+
+    .trust-item {
+      border-left: 1px solid var(--border);
+      padding-left: 10px;
+    }
+
+    .trust-item:first-child {
+      border-left: 0;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--green-dark);
+    }
+
+    .trust-item span {
+      font-size: .65rem;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 390px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      height: 410px;
+      border-radius: 38px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: var(--green-light);
+    }
+
+    .hero-image-wrap img {
+      height: 100%;
+      object-position: center;
+    }
+
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(14,54,35,.23));
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      background: rgba(255,255,255,.93);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 13px 15px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .floating-card.one {
+      right: -5px;
+      top: 30px;
+    }
+
+    .floating-card.two {
+      left: -6px;
+      bottom: 28px;
+      animation-delay: -1.5s;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: .8rem;
+      color: var(--green-deep);
+    }
+
+    .floating-card span {
+      display: block;
+      font-size: .64rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .category-strip {
+      margin-top: -5px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .category-scroll {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .category-pill {
+      min-height: 82px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 9px 30px rgba(32,84,55,.05);
+      transition: .3s;
+    }
+
+    .category-pill:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .category-icon {
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      display: grid;
+      place-items: center;
+      color: var(--green-dark);
+      font-size: 1.15rem;
+    }
+
+    .category-pill strong {
+      display: block;
+      font-size: .8rem;
+    }
+
+    .category-pill span {
+      display: block;
+      color: var(--muted);
+      font-size: .62rem;
+      margin-top: 2px;
+    }
+
+    .products-section {
+      background: white;
+    }
+
+    .products-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin-bottom: 25px;
+      padding-bottom: 2px;
+    }
+
+    .filter-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: #f7fbf8;
+      color: var(--muted);
+      padding: 9px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: .25s;
+      font-size: .76rem;
+      font-weight: 600;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--green-dark);
+      color: white;
+      border-color: var(--green-dark);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .product-card {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: white;
+      overflow: hidden;
+      transition: .35s cubic-bezier(.22,1,.36,1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-image {
+      height: 205px;
+      background: #f3f7f3;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      height: 100%;
+      transition: .55s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255,255,255,.93);
+      color: var(--green-dark);
+      border-radius: 20px;
+      padding: 4px 8px;
+      font-size: .6rem;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .heart {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 32px;
+      height: 32px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.9);
+      color: #799082;
+      cursor: pointer;
+      z-index: 2;
+      font-size: .95rem;
+    }
+
+    .heart.active {
+      color: #c36f78;
+    }
+
+    .product-info {
+      padding: 14px;
+    }
+
+    .product-brand {
+      color: var(--green);
+      font-size: .63rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .product-title {
+      font-size: .82rem;
+      line-height: 1.5;
+      min-height: 42px;
+    }
+
+    .product-desc {
+      color: var(--muted);
+      font-size: .65rem;
+      line-height: 1.7;
+      margin: 6px 0 10px;
+      min-height: 44px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 7px;
+    }
+
+    .price strong {
+      display: block;
+      color: var(--green-deep);
+      font-size: .85rem;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: .55rem;
+    }
+
+    .add-cart {
+      border: 0;
+      background: var(--green-dark);
+      color: white;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: .25s;
+      font-size: 1rem;
+    }
+
+    .add-cart:hover {
+      transform: scale(1.08);
+      background: var(--green-deep);
+    }
+
+    .quality-banner {
+      background: linear-gradient(120deg, #174b32, #347e58);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      margin-top: 42px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quality-banner::before {
+      content: "ADORE";
+      position: absolute;
+      left: -20px;
+      bottom: -35px;
+      font-family: "DM Sans";
+      font-size: 7rem;
+      font-weight: 800;
+      opacity: .05;
+      letter-spacing: .08em;
+    }
+
+    .quality-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .quality-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .quality-content p {
+      color: #d5ebdc;
+      font-size: .78rem;
+      max-width: 690px;
+    }
+
+    .results-section {
+      background: #f1f8f3;
+    }
+
+    .result-grid {
+      display: grid;
+      gap: 15px;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 35px rgba(35,91,58,.06);
+    }
+
+    .result-visual {
+      height: 230px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .result-visual > div {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-visual img {
+      height: 100%;
+    }
+
+    .result-label {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(20,45,32,.72);
+      color: white;
+      border-radius: 20px;
+      padding: 3px 9px;
+      font-size: .55rem;
+      z-index: 2;
+    }
+
+    .result-info {
+      padding: 15px;
+    }
+
+    .result-info h3 {
+      font-size: .9rem;
+    }
+
+    .result-info p {
+      color: var(--muted);
+      font-size: .65rem;
+      margin-top: 4px;
+    }
+
+    .disclaimer {
+      color: var(--muted);
+      font-size: .65rem;
+      margin-top: 20px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.65);
+      border-radius: 13px;
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 430px;
+      border-radius: 35px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-image img {
+      height: 100%;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      background: rgba(255,255,255,.93);
+      border-radius: 18px;
+      padding: 14px 17px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-badge strong {
+      color: var(--green-deep);
+      font-size: .85rem;
+      display: block;
+    }
+
+    .about-badge span {
+      color: var(--muted);
+      font-size: .62rem;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: .88rem;
+      margin: 14px 0;
+    }
+
+    .assurance-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 22px;
+    }
+
+    .assurance {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: .76rem;
+      font-weight: 600;
+    }
+
+    .assurance i {
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-style: normal;
+    }
+
+    .brand-values {
+      background: var(--surface-soft);
+      border-radius: var(--radius-lg);
+      padding: 30px 22px;
+      margin-top: 30px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 12px;
+    }
+
+    .value strong {
+      display: block;
+      color: var(--green-deep);
+      font-size: .8rem;
+      margin-bottom: 2px;
+    }
+
+    .value span {
+      color: var(--muted);
+      font-size: .62rem;
+      line-height: 1.6;
+    }
+
+    .team-section {
+      background: white;
+    }
+
+    .expert-card {
+      display: grid;
+      gap: 0;
+      background: var(--surface-soft);
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .expert-image {
+      height: 390px;
+    }
+
+    .expert-image img {
+      height: 100%;
+    }
+
+    .expert-info {
+      padding: 27px 23px;
+    }
+
+    .expert-info .role {
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 700;
+    }
+
+    .expert-info h3 {
+      font-size: 1.35rem;
+      margin-top: 4px;
+    }
+
+    .expert-info p {
+      color: var(--muted);
+      font-size: .76rem;
+      margin: 10px 0 18px;
+    }
+
+    .expert-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .expert-tags span {
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: white;
+      color: var(--green-dark);
+      font-size: .6rem;
+      border: 1px solid var(--border);
+    }
+
+    .why-grid {
+      display: grid;
+      gap: 13px;
+    }
+
+    .why-card {
+      padding: 24px 20px;
+      border-radius: 23px;
+      background: white;
+      border: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .why-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 14px;
+      background: var(--green-light);
+      display: grid;
+      place-items: center;
+      color: var(--green-dark);
+      font-size: 1.15rem;
+      margin-bottom: 13px;
+    }
+
+    .why-card h3 {
+      font-size: .88rem;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: .67rem;
+      margin-top: 5px;
+    }
+
+    .testimonial-section {
+      background: #f1f8f3;
+    }
+
+    .testimonial-track {
+      display: grid;
+      gap: 13px;
+    }
+
+    .testimonial {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 23px;
+      position: relative;
+    }
+
+    .quote {
+      color: var(--green);
+      font-family: Georgia, serif;
+      font-size: 3rem;
+      line-height: .8;
+      opacity: .35;
+    }
+
+    .stars {
+      color: #bd9959;
+      font-size: .72rem;
+      letter-spacing: 2px;
+      margin: 10px 0;
+    }
+
+    .testimonial p {
+      color: #5f7066;
+      font-size: .76rem;
+      line-height: 2;
+    }
+
+    .customer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 17px;
+    }
+
+    .customer-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green-light);
+      display: grid;
+      place-items: center;
+      color: var(--green-dark);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .customer strong {
+      display: block;
+      font-size: .72rem;
+    }
+
+    .customer span {
+      display: block;
+      color: var(--muted);
+      font-size: .56rem;
+    }
+
+    .cta-section {
+      padding: 60px 0;
+    }
+
+    .cta-box {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,.12), transparent 25%),
+        linear-gradient(125deg, #174b32, #438b61);
+      color: white;
+      border-radius: 34px;
+      padding: 40px 23px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-box::after {
+      content: "✦";
+      position: absolute;
+      left: 30px;
+      top: 18px;
+      font-size: 9rem;
+      opacity: .06;
+    }
+
+    .cta-box h2 {
+      max-width: 650px;
+    }
+
+    .cta-box p {
+      color: #d9ebe0;
+      max-width: 620px;
+      font-size: .8rem;
+      margin: 10px 0 22px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin-inline: auto;
+      display: grid;
+      gap: 9px;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 17px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      text-align: right;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+      font-size: .8rem;
+    }
+
+    .faq-question span {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: var(--surface-soft);
+      color: var(--green-dark);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: .3s;
+    }
+
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 17px 17px;
+      color: var(--muted);
+      font-size: .72rem;
+      line-height: 2;
+    }
+
+    .contact-section {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 28px;
+    }
+
+    .contact-info {
+      background: var(--surface-soft);
+      border-radius: 28px;
+      padding: 25px 20px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.15rem;
+    }
+
+    .contact-info > p {
+      color: var(--muted);
+      font-size: .72rem;
+      margin: 7px 0 22px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 11px;
+      align-items: center;
+      margin: 14px 0;
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: white;
+      display: grid;
+      place-items: center;
+      color: var(--green-dark);
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: .68rem;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: var(--muted);
+      font-size: .65rem;
+    }
+
+    .contact-form {
+      padding: 3px 0;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .field label {
+      display: block;
+      font-size: .65rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #f8fbf9;
+      border-radius: 14px;
+      padding: 12px 13px;
+      outline: none;
+      font-size: .72rem;
+      color: var(--text);
+      transition: .25s;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: #78b28e;
+      box-shadow: 0 0 0 4px rgba(91,159,113,.1);
+      background: white;
+    }
+
+    .field textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .map {
+      height: 230px;
+      border-radius: 25px;
+      overflow: hidden;
+      margin-top: 15px;
+      border: 1px solid var(--border);
+      background: #e6f2e9;
+      position: relative;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: saturate(.7) contrast(.92);
+    }
+
+    footer {
+      background: #123d2a;
+      color: #d9e9df;
+      padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 30px;
+    }
+
+    .footer-brand strong {
+      color: white;
+      font-size: 1.4rem;
+    }
+
+    .footer-brand p {
+      color: #a9c3b3;
+      font-size: .68rem;
+      max-width: 350px;
+      margin-top: 8px;
+    }
+
+    .footer-links h4 {
+      color: white;
+      font-size: .75rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #aac2b3;
+      font-size: .65rem;
+      margin: 6px 0;
+      transition: .2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .socials a {
+      width: 35px;
+      height: 35px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: .7rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top: 35px;
+      padding-top: 18px;
+      color: #89aa97;
+      font-size: .6rem;
+      text-align: center;
+    }
+
+    .cart-fab {
+      position: fixed;
+      left: 16px;
+      bottom: 16px;
+      width: 55px;
+      height: 55px;
+      border-radius: 18px;
+      border: 0;
+      background: var(--green-dark);
+      color: white;
+      z-index: 900;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(23,75,50,.3);
+      font-size: 1.2rem;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #bd9959;
+      color: white;
+      font-size: .58rem;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 85px;
+      right: 50%;
+      transform: translate(50%, 20px);
+      background: #153f2b;
+      color: white;
+      padding: 11px 17px;
+      border-radius: 14px;
+      font-size: .68rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s;
+      z-index: 1500;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(50%, 0);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(10,35,23,.48);
+      backdrop-filter: blur(8px);
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-box {
+      background: white;
+      width: min(100%, 520px);
+      max-height: 90svh;
+      overflow-y: auto;
+      border-radius: 28px;
+      padding: 25px;
+      transform: translateY(20px) scale(.98);
+      transition: .35s;
+    }
+
+    .modal.active .modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 17px;
+    }
+
+    .modal-head h3 {
+      color: var(--green-deep);
+    }
+
+    .modal-close {
+      border: 0;
+      background: var(--surface-soft);
+      width: 35px;
+      height: 35px;
+      border-radius: 11px;
+      cursor: pointer;
+      color: var(--green-dark);
+    }
+
+    .cart-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 15px;
+      background: #f7fbf8;
+    }
+
+    .cart-item img {
+      width: 55px;
+      height: 55px;
+      border-radius: 11px;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-info strong {
+      display: block;
+      font-size: .7rem;
+    }
+
+    .cart-item-info span {
+      color: var(--muted);
+      font-size: .6rem;
+    }
+
+    .remove-item {
+      border: 0;
+      background: transparent;
+      color: #a56e73;
+      cursor: pointer;
+    }
+
+    .cart-total {
+      border-top: 1px solid var(--border);
+      margin-top: 15px;
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: .82rem;
+    }
+
+    .cart-actions {
+      display: grid;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .stagger.visible > * {
+      animation: staggerIn .65s forwards;
+    }
+
+    .stagger.visible > *:nth-child(2) { animation-delay: .07s; }
+    .stagger.visible > *:nth-child(3) { animation-delay: .14s; }
+    .stagger.visible > *:nth-child(4) { animation-delay: .21s; }
+    .stagger.visible > *:nth-child(5) { animation-delay: .28s; }
+    .stagger.visible > *:nth-child(6) { animation-delay: .35s; }
+
+    @keyframes staggerIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        width: min(calc(100% - 48px), var(--max));
+      }
+
+      .category-scroll {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .result-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonial-track {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .form-grid.two {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 850px) {
+      .section {
+        padding: 105px 0;
+      }
+
+      .desktop-menu {
+        display: flex;
+      }
+
+      .header-cta {
+        display: inline-flex;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0 90px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.05fr .95fr;
+        gap: 70px;
+      }
+
+      .hero-visual {
+        min-height: 540px;
+      }
+
+      .hero-image-wrap {
+        height: 550px;
+      }
+
+      .floating-card.one {
+        right: -25px;
+      }
+
+      .floating-card.two {
+        left: -25px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .product-image {
+        height: 250px;
+      }
+
+      .about-grid {
+        grid-template-columns: .9fr 1.1fr;
+        gap: 70px;
+      }
+
+      .expert-card {
+        grid-template-columns: .8fr 1.2fr;
+      }
+
+      .expert-image {
+        height: 450px;
+      }
+
+      .expert-info {
+        padding: 55px 45px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: .85fr 1.15fr;
+        align-items: start;
+      }
+
+      .form-grid.two {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .hero-image-wrap {
+        transform: rotate(1deg);
+      }
+
+      .hero-image-wrap:hover {
+        transform: rotate(0deg) scale(1.01);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal,
+      .stagger > * {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    ارسال و ثبت سفارش آنلاین • تضمین اصالت محصولات • واردات مستقیم از اروپا
+  </div>
+
+  <header id="header">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="فروشگاه آدور">
+        <div class="brand-mark">A</div>
+        <div class="brand-text">
+          <strong>آدور</strong>
+          <small>ADORE BEAUTY STORE</small>
+        </div>
+      </a>
+
+      <nav class="desktop-menu" aria-label="منوی اصلی">
+        <a href="#home">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#results">راهنمای انتخاب</a>
+        <a href="#about">درباره آدور</a>
+        <a href="#reviews">نظرات</a>
+        <a href="#faq">سؤالات متداول</a>
+        <a href="#contact">تماس با ما</a>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="#products">
+        مشاهده محصولات
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="باز کردن منو">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-panel">
+      <button class="mobile-close" id="mobileClose" aria-label="بستن منو">×</button>
+      <nav class="mobile-links">
+        <a href="#home">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#results">راهنمای انتخاب</a>
+        <a href="#about">درباره آدور</a>
+        <a href="#reviews">نظرات مشتریان</a>
+        <a href="#faq">سؤالات متداول</a>
+        <a href="#contact">تماس با ما</a>
+      </nav>
+      <a class="btn btn-primary" href="#products">انتخاب سریع محصول</a>
+    </div>
+  </div>
+
+  <main id="home">
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-kicker">
+            <span></span>
+            اصالت و کیفیت؛ انتخاب همیشگی آدور
+          </div>
+
+          <h1>
+            زیبایی و جوانی<br>
+            با <em>محصولات اورجینال</em>
+          </h1>
+
+          <p class="hero-description">
+            مجموعه‌ای منتخب از محصولات مراقبت پوست و مو، جوانساز، آرایشی و
+            عطرهای اصل از برندهای معتبر اروپا؛ با تهیه مطمئن و مستقیم از اروپا.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">مشاهده محصولات ←</a>
+            <a href="https://wa.me/989025421495" target="_blank" rel="noopener" class="btn btn-light">
+              مشاوره در واتساپ
+            </a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <strong>۱۰۰٪</strong>
+              <span>تأکید بر اصالت کالا</span>
+            </div>
+            <div class="trust-item">
+              <strong>EU</strong>
+              <span>تهیه از اروپا</span>
+            </div>
+            <div class="trust-item">
+              <strong>اصل</strong>
+              <span>برندهای معتبر</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="floating-card one">
+            <strong>محصولات منتخب اروپا</strong>
+            <span>برای زیبایی روزمره شما</span>
+          </div>
+
+          <div class="hero-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=90"
+              alt="محصولات مراقبت از پوست با ظاهر لوکس"
+            >
+          </div>
+
+          <div class="floating-card two">
+            <strong>حس خوب آدور</strong>
+            <span>عطر، مراقبت و زیبایی در یک انتخاب</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-strip">
+      <div class="container">
+        <div class="category-scroll stagger">
+          <a href="#products" class="category-pill">
+            <div class="category-icon">✦</div>
+            <div>
+              <strong>مراقبت پوست</strong>
+              <span>ضدچروک، آبرسان و جوانساز</span>
+            </div>
+          </a>
+
+          <a href="#products" class="category-pill">
+            <div class="category-icon">♡</div>
+            <div>
+              <strong>مراقبت مو</strong>
+              <span>تقویت و مراقبت تخصصی</span>
+            </div>
+          </a>
+
+          <a href="#products" class="category-pill">
+            <div class="category-icon">◈</div>
+            <div>
+              <strong>عطر اورجینال</strong>
+              <span>شنل، لانکوم و برندهای معتبر</span>
+            </div>
+          </a>
+
+          <a href="#products" class="category-pill">
+            <div class="category-icon">✧</div>
+            <div>
+              <strong>آرایشی و بهداشتی</strong>
+              <span>انتخاب‌های باکیفیت و مطمئن</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products-section" id="products">
+      <div class="container">
+        <div class="products-head reveal">
+          <div>
+            <span class="eyebrow">انتخابی با وسواس</span>
+            <h2>محصولات منتخب آدور</h2>
+            <p class="section-description">
+              محصولات را بر اساس نیاز خود انتخاب کنید. قیمت و مشخصات هر محصول
+              در کارت آن درج شده و اطلاعات این بخش به‌سادگی قابل ویرایش است.
+            </p>
+          </div>
+        </div>
+
+        <div class="filter-row" id="filters">
+          <button class="filter-btn active" data-filter="all">همه</button>
+          <button class="filter-btn" data-filter="skin">مراقبت پوست</button>
+          <button class="filter-btn" data-filter="hair">مراقبت مو</button>
+          <button class="filter-btn" data-filter="perfume">عطر</button>
+          <button class="filter-btn" data-filter="beauty">آرایشی و بهداشتی</button>
+        </div>
+
+        <div class="products-grid stagger" id="productsGrid"></div>
+
+        <div class="quality-banner reveal">
+          <div class="quality-content">
+            <h3>انتخابی مطمئن برای زیبایی شما</h3>
+            <p>
+              در آدور تلاش می‌کنیم محصولاتی از برندهای معتبر را با اطلاعات
+              شفاف، توضیحات کاربردی و تجربه خریدی ساده در اختیار شما قرار دهیم.
+              برای اطمینان از مناسب بودن محصول می‌توانید پیش از خرید با ما در
+              واتساپ مشورت کنید.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">انتخاب هوشمندانه</span>
+          <h2>برای هر نیاز، یک انتخاب آدور</h2>
+          <p class="section-description">
+            به‌جای خرید تصادفی، ابتدا نیاز پوست و موی خود را مشخص کنید و سپس
+            محصول مناسب را انتخاب کنید.
+          </p>
+        </div>
+
+        <div class="result-grid stagger">
+
+          <article class="result-card">
+            <div class="result-visual">
+              <div>
+                <span class="result-label">نیاز پوست</span>
+                <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=700&q=85" alt="مراقبت از پوست و محصولات آبرسان">
+              </div>
+              <div>
+                <span class="result-label">روتین پیشنهادی</span>
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=85" alt="روتین مراقبت از پوست">
+              </div>
+            </div>
+            <div class="result-info">
+              <h3>خشکی و کم‌آبی پوست</h3>
+              <p>تمرکز بر آبرسانی، تقویت سد دفاعی پوست و ایجاد ظاهری شاداب‌تر.</p>
+            </div>
+          </article>
+
+          <article class="result-card">
+            <div class="result-visual">
+              <div>
+                <span class="result-label">نیاز مو</span>
+                <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=700&q=85" alt="مراقبت و زیبایی مو">
+              </div>
+              <div>
+                <span class="result-label">مراقبت</span>
+                <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=700&q=85" alt="محصولات مراقبت از مو">
+              </div>
+            </div>
+            <div class="result-info">
+              <h3>موهای خشک و آسیب‌دیده</h3>
+              <p>انتخاب محصولاتی برای مراقبت، لطافت و ظاهر سالم‌تر مو.</p>
+            </div>
+          </article>
+
+          <article class="result-card">
+            <div class="result-visual">
+              <div>
+                <span class="result-label">عطر</span>
+                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=85" alt="شیشه عطر لوکس">
+              </div>
+              <div>
+                <span class="result-label">انتخاب رایحه</span>
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=85" alt="عطر و رایحه لوکس">
+              </div>
+            </div>
+            <div class="result-info">
+              <h3>رایحه‌ای که ماندگار می‌شود</h3>
+              <p>انتخاب عطر بر اساس سلیقه، فصل، شخصیت و سبک استفاده شما.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="disclaimer">
+          * تصاویر این بخش برای نمایش سبک انتخاب محصول و تجربه بصری سایت استفاده
+          شده‌اند و جایگزین تصاویر واقعی قبل/بعد یا ادعای نتیجه درمانی نیستند.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img
+            src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1000&q=90"
+            alt="محصولات مراقبت از پوست در فضای لوکس"
+          >
+          <div class="about-badge">
+            <strong>ADORE BEAUTY</strong>
+            <span>زیبایی با انتخاب مطمئن</span>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <span class="eyebrow">داستان آدور</span>
+          <h2>زیبایی، وقتی زیباتر است که از انتخاب خود مطمئن باشید.</h2>
+
+          <p>
+            فروشگاه محصولات مراقبت از پوست آدور با تمرکز بر محصولات اورجینال،
+            باکیفیت و برندهای معتبر اروپا شکل گرفته است؛ برای کسانی که کیفیت
+            محصول و اصالت آن برایشان اهمیت دارد.
+          </p>
+
+          <p>
+            از عطرهای محبوب برندهای جهانی تا محصولات مراقبت پوست و مو و
+            جوانساز، تلاش ما این است که انتخابی شیک، مطمئن و بدون پیچیدگی
+            برای شما فراهم کنیم.
+          </p>
+
+          <div class="assurance-list">
+            <div class="assurance">
+              <i>✓</i>
+              تهیه محصولات از مسیر مطمئن و مستقیم اروپا
+            </div>
+            <div class="assurance">
+              <i>✓</i>
+              معرفی شفاف محصول و کاربرد آن
+            </div>
+            <div class="assurance">
+              <i>✓</i>
+              امکان مشاوره قبل از خرید
+            </div>
+            <div class="assurance">
+              <i>✓</i>
+              تجربه خرید آنلاین ساده و شخصی‌سازی‌شده
+            </div>
+          </div>
+
+          <div class="brand-values">
+            <div class="values-grid">
+              <div class="value">
+                <strong>اصالت</strong>
+                <span>اولویت اول آدور در انتخاب محصولات</span>
+              </div>
+              <div class="value">
+                <strong>کیفیت</strong>
+                <span>تمرکز بر برندهای شناخته‌شده و معتبر</span>
+              </div>
+              <div class="value">
+                <strong>اطمینان</strong>
+                <span>خرید با امکان پرسش و مشاوره</span>
+              </div>
+              <div class="value">
+                <strong>زیبایی</strong>
+                <span>تجربه‌ای شیک از انتخاب تا استفاده</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">مشاوره آدور</span>
+          <h2>قبل از خرید، انتخاب مناسب خودتان را پیدا کنید.</h2>
+          <p class="section-description">
+            اگر بین چند محصول مردد هستید، مشخصات پوست، مو یا سلیقه عطری خود را
+            برای ما بفرستید تا در انتخاب گزینه مناسب راهنمایی‌تان کنیم.
+          </p>
+        </div>
+
+        <div class="expert-card reveal">
+          <div class="expert-image">
+            <img
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=90"
+              alt="مشاوره تخصصی زیبایی و مراقبت پوست"
+            >
+          </div>
+
+          <div class="expert-info">
+            <span class="role">ADORE BEAUTY CONSULTATION</span>
+            <h3>مشاوره شخصی برای یک انتخاب بهتر</h3>
+            <p>
+              با ارسال نام محصول موردنظر یا توضیح نیازتان در واتساپ، قبل از
+              خرید اطلاعات لازم درباره کاربرد، نوع مصرف و انتخاب مناسب را
+              دریافت کنید.
+            </p>
+
+            <div class="expert-tags">
+              <span>مراقبت پوست</span>
+              <span>مراقبت مو</span>
+              <span>ضدچروک و جوانساز</span>
+              <span>انتخاب عطر</span>
+              <span>محصولات اورجینال</span>
+            </div>
+
+            <a href="https://wa.me/989025421495?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%20%D9%85%D8%AD%D8%B5%D9%88%D9%84%20%D9%86%DB%8C%D8%A7%D8%B2%20%D8%A8%D9%87%20%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7%DB%8C%DB%8C%20%D8%AF%D8%A7%D8%B1%D9%85." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:22px;width:max-content;">
+              دریافت مشاوره در واتساپ
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">چرا آدور؟</span>
+          <h2>چیزی بیشتر از یک فروشگاه آنلاین</h2>
+        </div>
+
+        <div class="why-grid stagger">
+          <article class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>توجه ویژه به اصالت</h3>
+            <p>محصولات با تمرکز بر تهیه از برندها و مسیرهای مطمئن انتخاب می‌شوند.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">✦</div>
+            <h3>برندهای معتبر اروپا</h3>
+            <p>انتخابی از برندهای شناخته‌شده در حوزه زیبایی، پوست، مو و عطر.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">♡</div>
+            <h3>انتخاب شخصی‌سازی‌شده</h3>
+            <p>در صورت نیاز می‌توانید قبل از خرید درباره انتخاب محصول مشورت کنید.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">↗</div>
+            <h3>خرید آنلاین آسان</h3>
+            <p>محصول را سریع پیدا کنید، قیمت را ببینید و برای سفارش اقدام کنید.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonial-section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">تجربه مشتریان</span>
+          <h2>حس خوب خرید از آدور</h2>
+          <p class="section-description">
+            نمونه متن‌های نمایشی برای شروع سایت؛ پس از دریافت بازخورد واقعی
+            مشتریان، این بخش را با نظرات واقعی جایگزین کنید.
+          </p>
+        </div>
+
+        <div class="testimonial-track stagger">
+          <article class="testimonial">
+            <div class="quote">“</div>
+            <div class="stars">★★★★★</div>
+            <p>
+              بسته‌بندی خیلی مرتب بود و چیزی که بیشتر از همه برایم مهم بود،
+              توضیحات کامل محصول و پاسخ‌گویی قبل از خرید بود.
+            </p>
+            <div class="customer">
+              <div class="customer-avatar">م</div>
+              <div>
+                <strong>مریم</strong>
+                <span>خریدار محصولات پوستی</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="quote">“</div>
+            <div class="stars">★★★★★</div>
+            <p>
+              برای انتخاب عطر بین چند گزینه مردد بودم. راهنمایی خوبی گرفتم و
+              عطری که انتخاب کردم دقیقاً با سلیقه‌ام هماهنگ بود.
+            </p>
+            <div class="customer">
+              <div class="customer-avatar">س</div>
+              <div>
+                <strong>سارا</strong>
+                <span>خریدار عطر</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial">
+            <div class="quote">“</div>
+            <div class="stars">★★★★★</div>
+            <p>
+              ظاهر محصولات و توضیحات سایت خیلی کمک کرد راحت‌تر انتخاب کنم.
+              تجربه خرید آنلاین آدور برایم ساده و دلنشین بود.
+            </p>
+            <div class="customer">
+              <div class="customer-avatar">ن</div>
+              <div>
+                <strong>نگار</strong>
+                <span>خریدار محصولات مراقبت پوست</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2>برای انتخاب محصول مناسب، با ما در ارتباط باشید.</h2>
+          <p>
+            اگر محصول خاصی مدنظر دارید یا برای انتخاب بین چند محصول نیاز به
+            راهنمایی دارید، از طریق واتساپ پیام بدهید.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-gold" href="https://wa.me/989025421495" target="_blank" rel="noopener">
+              شروع گفتگو در واتساپ
+            </a>
+            <a class="btn btn-light" href="tel:+989025421495">
+              تماس با آدور
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal" style="text-align:center;margin-inline:auto;">
+          <span class="eyebrow">پاسخ به پرسش‌های شما</span>
+          <h2>سؤالات متداول</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question">
+              محصولات آدور اورجینال هستند؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                آدور بر تهیه محصولات اصل از برندهای معتبر اروپا و خرید مطمئن
+                تأکید دارد. برای هر محصول نیز می‌توانید پیش از سفارش درباره
+                مشخصات و اصالت آن از ما سؤال کنید.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              چگونه محصول مناسب پوست یا مو را انتخاب کنم؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                کافی است نوع پوست یا مو، دغدغه اصلی و محصولاتی که در حال حاضر
+                استفاده می‌کنید را برای ما در واتساپ ارسال کنید تا در انتخاب
+                محصول مناسب راهنمایی‌تان کنیم.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              آیا امکان سفارش آنلاین وجود دارد؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                بله. خرید به صورت آنلاین انجام می‌شود. می‌توانید محصول موردنظر
+                را انتخاب کرده و از طریق واتساپ برای نهایی کردن سفارش با ما
+                ارتباط بگیرید.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              قیمت محصولات قابل تغییر است؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                بله. قیمت‌ها در این نسخه به‌صورت نمونه در کد تعریف شده‌اند و
+                می‌توانند به‌راحتی برای هر محصول، ارز یا قیمت جدید به‌روزرسانی
+                شوند.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ساعات پاسخ‌گویی آدور چگونه است؟
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                شنبه تا پنجشنبه، از ساعت ۱۰ صبح تا ۸ شب. پیام‌های واتساپ خارج
+                از این بازه نیز بررسی و در اولین فرصت پاسخ داده می‌شوند.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+
+        <div>
+          <div class="contact-info reveal">
+            <span class="eyebrow">ارتباط با آدور</span>
+            <h3>خرید آنلاین، ساده و مطمئن</h3>
+            <p>
+              برای سفارش، استعلام موجودی، قیمت یا دریافت مشاوره با ما در تماس باشید.
+            </p>
+
+            <div class="contact-item">
+              <div class="contact-icon">☎</div>
+              <div>
+                <strong>شماره تماس</strong>
+                <a href="tel:+989025421495">+98 902 542 1495</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">◉</div>
+              <div>
+                <strong>واتساپ</strong>
+                <a href="https://wa.me/989025421495" target="_blank" rel="noopener">
+                  +98 902 542 1495
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">⌚</div>
+              <div>
+                <strong>ساعت کاری</strong>
+                <span>شنبه تا پنجشنبه، ۱۰ صبح تا ۸ شب</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">⌂</div>
+              <div>
+                <strong>روش خرید</strong>
+                <span>خرید و ثبت سفارش به صورت آنلاین</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="map reveal">
+            <iframe
+              title="نقشه خرید آنلاین آدور"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=51.35%2C35.68%2C51.48%2C35.78&layer=mapnik"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <span class="eyebrow">درخواست مشاوره</span>
+          <h2>چه محصولی مدنظر شماست؟</h2>
+          <p class="section-description" style="margin-bottom:22px;">
+            فرم را تکمیل کنید؛ اطلاعات واردشده برای آماده‌سازی پیام واتساپ شما
+            استفاده می‌شود.
+          </p>
+
+          <form id="contactForm">
+            <div class="form-grid two">
+              <div class="field">
+                <label for="name">نام و نام خانوادگی</label>
+                <input id="name" type="text" placeholder="مثلاً سارا احمدی" required>
+              </div>
+
+              <div class="field">
+                <label for="phone">شماره تماس</label>
+                <input id="phone" type="tel" placeholder="09xxxxxxxxx" required>
+              </div>
+            </div>
+
+            <div class="form-grid two" style="margin-top:12px;">
+              <div class="field">
+                <label for="email">ایمیل</label>
+                <input id="email" type="email" placeholder="example@email.com">
+              </div>
+
+              <div class="field">
+                <label for="service">دسته محصول</label>
+                <select id="service">
+                  <option value="مراقبت پوست">مراقبت پوست</option>
+                  <option value="مراقبت مو">مراقبت مو</option>
+                  <option value="عطر">عطر اورجینال</option>
+                  <option value="آرایشی و بهداشتی">آرایشی و بهداشتی</option>
+                  <option value="محصول جوانساز">محصول جوانساز</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top:12px;">
+              <label for="message">پیام</label>
+              <textarea id="message" placeholder="نام محصول یا نیاز خود را بنویسید..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              ارسال درخواست در واتساپ
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <strong>آدور</strong>
+          <p>
+            فروشگاه محصولات مراقبت از پوست، مو، جوانساز، آرایشی و عطرهای
+            اورجینال؛ با تمرکز بر برندهای معتبر اروپا.
+          </p>
+
+          <div class="socials">
+            <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="اینستاگرام">IG</a>
+            <a href="https://wa.me/989025421495" target="_blank" rel="noopener" aria-label="واتساپ">WA</a>
+            <a href="tel:+989025421495" aria-label="تماس">☎</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>دسترسی سریع</h4>
+          <a href="#products">محصولات</a>
+          <a href="#about">درباره آدور</a>
+          <a href="#reviews">نظرات مشتریان</a>
+          <a href="#faq">سؤالات متداول</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>تماس</h4>
+          <a href="tel:+989025421495">+98 902 542 1495</a>
+          <a href="https://wa.me/989025421495" target="_blank" rel="noopener">واتساپ آدور</a>
+          <a href="#contact">خرید آنلاین</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © ۱۴۰۵ فروشگاه محصولات مراقبت از پوست آدور — زیبایی و جوانی با محصولات اورجینال
+      </div>
+    </div>
+  </footer>
+
+  <button class="cart-fab" id="cartFab" aria-label="سبد خرید">
+    🛍
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <div class="toast" id="toast">محصول به سبد انتخاب اضافه شد.</div>
+
+  <div class="modal" id="cartModal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3>انتخاب‌های شما</h3>
+        <button class="modal-close" id="modalClose">×</button>
+      </div>
+
+      <div class="cart-list" id="cartList"></div>
+
+      <div class="cart-total">
+        <span>جمع تقریبی</span>
+        <span id="cartTotal">۰ تومان</span>
+      </div>
+
+      <div class="cart-actions">
+        <button class="btn btn-primary" id="orderCart">
+          ادامه سفارش در واتساپ
+        </button>
+        <button class="btn btn-light" id="clearCart">
+          پاک کردن انتخاب‌ها
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /*
+      ============================================================
+      بخش مدیریت محصولات
+      ------------------------------------------------------------
+      برای تغییر نام، قیمت، تصویر، توضیح یا دسته‌بندی محصولات،
+      فقط اطلاعات همین آرایه را ویرایش کنید.
+      دسته‌ها:
+      skin / hair / perfume / beauty
+      ============================================================
+    */
+
+    const products = [
+      {
+        id: 1,
+        brand: "LANCOME",
+        title: "Advanced Génifique Youth Activating Serum",
+        category: "skin",
+        categoryLabel: "مراقبت پوست",
+        description: "سرم محبوب برای روتین مراقبت و ایجاد ظاهری شاداب‌تر و جوان‌تر.",
+        price: 4850000,
+        badge: "پرفروش",
+        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=90"
+      },
+      {
+        id: 2,
+        brand: "LA ROCHE-POSAY",
+        title: "Toleriane Hydrating Care",
+        category: "skin",
+        categoryLabel: "مراقبت پوست",
+        description: "انتخابی مناسب برای روتین آبرسانی و مراقبت روزانه پوست.",
+        price: 2650000,
+        badge: "محبوب",
+        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&q=90"
+      },
+      {
+        id: 3,
+        brand: "KÉRASTASE",
+        title: "Nutritive Hair Care",
+        category: "hair",
+        categoryLabel: "مراقبت مو",
+        description: "مراقبت تغذیه‌ای برای موهای خشک و نیازمند لطافت بیشتر.",
+        price: 3950000,
+        badge: "منتخب",
+        image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=800&q=90"
+      },
+      {
+        id: 4,
+        brand: "CHANEL",
+        title: "Allure Eau de Parfum",
+        category: "perfume",
+        categoryLabel: "عطر",
+        description: "رایحه‌ای شیک و ماندگار برای کسانی که انتخاب کلاسیک را می‌پسندند.",
+        price: 12800000,
+        badge: "لوکس",
+        image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=90"
+      },
+      {
+        id: 5,
+        brand: "DIOR",
+        title: "Capture Youth Skin Care",
+        category: "skin",
+        categoryLabel: "جوانساز",
+        description: "محصولی لوکس برای تکمیل روتین مراقبت و جوانسازی پوست.",
+        price: 6900000,
+        badge: "جدید",
+        image: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=800&q=90"
+      },
+      {
+        id: 6,
+        brand: "LANCOME",
+        title: "Rénergie Multi-Lift Cream",
+        category: "skin",
+        categoryLabel: "جوانساز",
+        description: "کرم مراقبتی لوکس برای پوست‌های بالغ و روتین ضدچروک.",
+        price: 7250000,
+        badge: "منتخب آدور",
+        image: "https://images.unsplash.com/photo-1556228578-5b2b3b1b1a1d?auto=format&fit=crop&w=800&q=90"
+      },
+      {
+        id: 7,
+        brand: "OLAPLEX",
+        title: "Bond Maintenance Hair Care",
+        category: "hair",
+        categoryLabel: "مراقبت مو",
+        description: "برای مراقبت از موهایی که در اثر رنگ و حرارت نیازمند توجه بیشتر هستند.",
+        price: 3200000,
+        badge: "محبوب",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=90"
+      },
+      {
+        id: 8,
+        brand: "YSL",
+        title: "Libre Eau de Parfum",
+        category: "perfume",
+        categoryLabel: "عطر",
+        description: "رایحه‌ای مدرن و جذاب برای استفاده روزمره و موقعیت‌های خاص.",
+        price: 9800000,
+        badge: "پرفروش",
+        image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=90"
+      }
+    ];
+
+    const productsGrid = document.getElementById("productsGrid");
+    const filters = document.querySelectorAll(".filter-btn");
+    const cartCount = document.getElementById("cartCount");
+    const cartList = document.getElementById("cartList");
+    const cartTotal = document.getElementById("cartTotal");
+    const cartModal = document.getElementById("cartModal");
+    const toast = document.getElementById("toast");
+
+    let cart = [];
+
+    function formatPrice(price) {
+      return new Intl.NumberFormat("fa-IR").format(price) + " تومان";
+    }
+
+    function renderProducts(filter = "all") {
+      const filtered = filter === "all"
+        ? products
+        : products.filter(product => product.category === filter);
+
+      productsGrid.innerHTML = filtered.map(product => `
+        <article class="product-card">
+          <div class="product-image">
+            <span class="product-badge">${product.badge}</span>
+            <button class="heart" aria-label="افزودن به علاقه‌مندی‌ها">♡</button>
+            <img src="${product.image}" alt="${product.brand} ${product.title}" loading="lazy">
+          </div>
+
+          <div class="product-info">
+            <div class="product-brand">${product.brand}</div>
+            <h3 class="product-title">${product.title}</h3>
+            <p class="product-desc">${product.description}</p>
+
+            <div class="product-bottom">
+              <div class="price">
+                <strong>${formatPrice(product.price)}</strong>
+                <small>${product.categoryLabel}</small>
+              </div>
+
+              <button
+                class="add-cart"
+                data-id="${product.id}"
+                aria-label="افزودن ${product.title} به سبد"
+                title="افزودن به انتخاب‌ها"
+              >+</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      document.querySelectorAll(".add-cart").forEach(button => {
+        button.addEventListener("click", () => {
+          addToCart(Number(button.dataset.id));
+        });
+      });
+
+      document.querySelectorAll(".heart").forEach(button => {
+        button.addEventListener("click", () => {
+          button.classList.toggle("active");
+          button.textContent = button.classList.contains("active") ? "♥" : "♡";
+        });
+      });
+    }
+
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      if (!product) return;
+
+      if (!cart.some(item => item.id === id)) {
+        cart.push(product);
+        updateCart();
+        showToast("محصول به انتخاب‌های شما اضافه شد.");
+      } else {
+        showToast("این محصول قبلاً انتخاب شده است.");
+      }
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      updateCart();
+    }
+
+    function updateCart() {
+      cartCount.textContent = new Intl.NumberFormat("fa-IR").format(cart.length);
+
+      if (!cart.length) {
+        cartList.innerHTML = `
+          <div style="text-align:center;padding:30px 10px;color:#718178;font-size:.75rem;">
+            هنوز محصولی انتخاب نکرده‌اید.
+          </div>
+        `;
+        cartTotal.textContent = "۰ تومان";
+        return;
+      }
+
+      cartList.innerHTML = cart.map(product => `
+        <div class="cart-item">
+          <img src="${product.image}" alt="${product.title}">
+          <div class="cart-item-info">
+            <strong>${product.brand} — ${product.title}</strong>
+            <span>${formatPrice(product.price)}</span>
+          </div>
+          <button class="remove-item" data-id="${product.id}" aria-label="حذف محصول">×</button>
+        </div>
+      `).join("");
+
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      cartTotal.textContent = formatPrice(total);
+
+      document.querySelectorAll(".remove-item").forEach(button => {
+        button.addEventListener("click", () => {
+          removeFromCart(Number(button.dataset.id));
+        });
+      });
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
+    }
+
+    filters.forEach(button => {
+      button.addEventListener("click", () => {
+        filters.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        renderProducts(button.dataset.filter);
+      });
+    });
+
+    document.getElementById("cartFab").addEventListener("click", () => {
+      cartModal.classList.add("active");
+      document.body.classList.add("no-scroll");
+      updateCart();
+    });
+
+    document.getElementById("modalClose").addEventListener("click", closeCart);
+
+    cartModal.addEventListener("click", e => {
+      if (e.target === cartModal) closeCart();
+    });
+
+    function closeCart() {
+      cartModal.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+    }
+
+    document.getElementById("clearCart").addEventListener("click", () => {
+      cart = [];
+      updateCart();
+      showToast("انتخاب‌های شما پاک شد.");
+    });
+
+    document.getElementById("orderCart").addEventListener("click", () => {
+      if (!cart.length) {
+        showToast("ابتدا یک محصول انتخاب کنید.");
+        return;
+      }
+
+      const names = cart.map(item => `• ${item.brand} — ${item.title}`).join("\n");
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+      const message =
+        "سلام آدور، برای سفارش محصولات زیر راهنمایی می‌خواهم:\n\n" +
+        names +
+        "\n\nجمع تقریبی: " +
+        formatPrice(total);
+
+      window.open(
+        "https://wa.me/989025421495?text=" + encodeURIComponent(message),
+        "_blank"
+      );
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappMessage =
+        `سلام آدور 🌿\n\n` +
+        `نام: ${name}\n` +
+        `شماره تماس: ${phone}\n` +
+        `ایمیل: ${email || "ثبت نشده"}\n` +
+        `دسته محصول: ${service}\n` +
+        `پیام: ${message || "نیاز به راهنمایی دارم."}`;
+
+      window.open(
+        "https://wa.me/989025421495?text=" + encodeURIComponent(whatsappMessage),
+        "_blank"
+      );
+    });
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    }, { passive: true });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileClose = document.getElementById("mobileClose");
+
+    function openMenu() {
+      mobileMenu.classList.add("active");
+      document.body.classList.add("no-scroll");
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove("active");
+      document.body.classList.remove("no-scroll");
+    }
+
+    menuToggle.addEventListener("click", openMenu);
+    mobileClose.addEventListener("click", closeMenu);
+
+    mobileMenu.addEventListener("click", e => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+
+    document.querySelectorAll(".mobile-links a, .mobile-panel .btn").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.querySelectorAll(".faq-question").forEach(question => {
+      question.addEventListener("click", () => {
+        const item = question.parentElement;
+        const answer = item.querySelector(".faq-answer");
+
+        document.querySelectorAll(".faq-item").forEach(other => {
+          if (other !== item) {
+            other.classList.remove("active");
+            other.querySelector(".faq-answer").style.maxHeight = null;
+          }
+        });
+
+        item.classList.toggle("active");
+
+        if (item.classList.contains("active")) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = null;
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: .12
+    });
+
+    document.querySelectorAll(".reveal, .stagger").forEach(el => observer.observe(el));
+
+    renderProducts();
+    updateCart();
+  </script>
+
+</body>
+</html>
