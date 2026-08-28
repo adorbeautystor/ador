@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدیریت فروشگاه آدور</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif;
+  background: #f7f3f5;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  color: #8b5268;
+}
+
+.header p {
+  margin: 0;
+  color: #777;
+}
+
+.product {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 15px rgba(0,0,0,.07);
+}
+
+.product h2 {
+  margin-top: 0;
+  color: #8b5268;
+  font-size: 20px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.save {
+  background: #8b5268;
+  color: white;
+  margin-top: 15px;
+}
+
+.delete {
+  background: #eee;
+  color: #b33;
+  margin-top: 15px;
+  margin-right: 8px;
+}
+
+.add {
+  width: 100%;
+  background: #333;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.message {
+  display: none;
+  background: #e8f5e9;
+  color: #28733a;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.preview {
+  max-width: 120px;
+  max-height: 120px;
+  display: none;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 10px;
+  color: #8b5268;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>پنل مدیریت آدور</h1>
+    <p>مدیریت محصولات و قیمت‌ها</p>
+    <a class="back" href="index.html">بازگشت به فروشگاه</a>
+  </div>
+
+  <div id="message" class="message">
+    تغییرات با موفقیت ذخیره شد ✓
+  </div>
+
+  <button class="add" onclick="addProduct()">
+    + افزودن محصول جدید
+  </button>
+
+  <div id="products"></div>
+
+</div>
+
+<script>
+
+let products = JSON.parse(localStorage.getItem("adorProducts") || "null");
+
+if (!products) {
+  products = [
+    {
+      name: "محصول ۱",
+      price: "",
+      description: "",
+      image: ""
+    },
+    {
+      name: "محصول ۲",
+      price: "",
+      description: "",
+      image: ""
+    },
+    {
+      name: "محصول ۳",
+      price: "",
+      description: "",
+      image: ""
+    }
+  ];
+}
+
+function saveAll() {
+  localStorage.setItem("adorProducts", JSON.stringify(products));
+
+  const message = document.getElementById("message");
+  message.style.display = "block";
+
+  setTimeout(function() {
+    message.style.display = "none";
+  }, 2000);
+}
+
+function renderProducts() {
+
+  const box = document.getElementById("products");
+  box.innerHTML = "";
+
+  products.forEach(function(product, index) {
+
+    const div = document.createElement("div");
+    div.className = "product";
+
+    div.innerHTML = `
+      <h2>محصول ${index + 1}</h2>
+
+      <label>نام محصول</label>
+      <input
+        type="text"
+        value="${escapeHtml(product.name)}"
+        onchange="products[${index}].name=this.value"
+      >
+
+      <label>قیمت</label>
+      <input
+        type="text"
+        value="${escapeHtml(product.price)}"
+        placeholder="مثلاً 4,850,000"
+        onchange="products[${index}].price=this.value"
+      >
+
+      <label>توضیحات محصول</label>
+      <textarea
+        onchange="products[${index}].description=this.value"
+      >${escapeHtml(product.description)}</textarea>
+
+      <label>آدرس تصویر</label>
+      <input
+        type="text"
+        value="${escapeHtml(product.image)}"
+        placeholder="آدرس تصویر"
+        onchange="products[${index}].image=this.value; renderProducts()"
+      >
+
+      ${
+        product.image
+        ? `<img class="preview" src="${escapeHtml(product.image)}"
+             style="display:block"
+             onerror="this.style.display='none'">`
+        : ""
+      }
+
+      <button class="save" onclick="saveAll()">
+        ذخیره تغییرات
+      </button>
+
+      <button class="delete" onclick="deleteProduct(${index})">
+        حذف محصول
+      </button>
+    `;
+
+    box.appendChild(div);
+  });
+}
+
+function addProduct() {
+
+  products.push({
+    name: "محصول جدید",
+    price: "",
+    description: "",
+    image: ""
+  });
+
+  saveAll();
+  renderProducts();
+}
+
+function deleteProduct(index) {
+
+  if (confirm("آیا مطمئن هستید که این محصول حذف شود؟")) {
+
+    products.splice(index, 1);
+
+    saveAll();
+    renderProducts();
+  }
+}
+
+function escapeHtml(text) {
+
+  if (!text) return "";
+
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+renderProducts();
+
+</script>
+
+</body>
+</html>
