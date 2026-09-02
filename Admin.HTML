@@ -14,239 +14,275 @@
     body {
       margin: 0;
       font-family: Tahoma, Arial, sans-serif;
-      background: #f6f3f1;
-      color: #292929;
+      background: #f6f3f2;
+      color: #382632;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #67264f, #80365f);
+      color: white;
+      padding: 45px 20px 35px;
     }
 
     .container {
-      width: min(100% - 24px, 900px);
+      width: min(1100px, calc(100% - 30px));
       margin: auto;
     }
 
-    header {
-      background: linear-gradient(135deg, #5c234b, #8d426d);
-      color: white;
-      padding: 30px 0;
-      margin-bottom: 20px;
+    .header h1 {
+      margin: 0 0 10px;
+      font-size: 2.2rem;
     }
 
-    header h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
-    }
-
-    header p {
+    .header p {
       margin: 0;
       opacity: .9;
-      font-size: 14px;
+      font-size: 1rem;
     }
 
     .top-actions {
       display: flex;
-      gap: 10px;
-      margin: 20px 0;
+      gap: 12px;
       flex-wrap: wrap;
+      margin: 25px 0;
     }
 
     button,
     .btn {
       border: 0;
-      border-radius: 10px;
-      padding: 12px 18px;
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-size: 15px;
       cursor: pointer;
-      font-family: inherit;
-      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .btn-primary {
-      background: #6d2b58;
+      background: #67264f;
+      color: white;
+    }
+
+    .btn-success {
+      background: #3d8065;
+      color: white;
+    }
+
+    .btn-danger {
+      background: #b74652;
       color: white;
     }
 
     .btn-light {
       background: white;
-      color: #6d2b58;
+      color: #67264f;
       border: 1px solid #ddd;
     }
 
-    .btn-danger {
-      background: #b83b4b;
-      color: white;
-    }
-
-    .btn-green {
-      background: #237a5b;
-      color: white;
+    .products-count {
+      background: white;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.05);
+      font-weight: bold;
     }
 
     .product-card {
       background: white;
-      border-radius: 18px;
-      padding: 18px;
-      margin-bottom: 18px;
-      box-shadow: 0 5px 25px rgba(0,0,0,.07);
-      border: 1px solid #eee;
+      border-radius: 25px;
+      padding: 22px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.07);
     }
 
-    .product-header {
+    .product-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 15px;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .product-head h2 {
+      margin: 0;
+      color: #67264f;
+      font-size: 1.4rem;
     }
 
     .product-number {
-      font-weight: bold;
-      color: #6d2b58;
-      font-size: 18px;
-    }
-
-    .product-preview {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 18px;
-      padding: 12px;
-      background: #faf8f7;
-      border-radius: 14px;
-    }
-
-    .product-preview img {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      background: #eee;
-    }
-
-    .image-actions {
-      flex: 1;
-    }
-
-    .image-actions strong {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .image-actions small {
-      display: block;
-      color: #777;
-      line-height: 1.8;
-      margin-top: 8px;
-    }
-
-    input,
-    textarea,
-    select {
-      width: 100%;
-      border: 1px solid #ddd;
+      background: #f2e7ee;
+      color: #67264f;
+      padding: 7px 12px;
       border-radius: 10px;
-      padding: 12px;
-      font-family: inherit;
-      font-size: 14px;
+      font-size: 13px;
+    }
+
+    .image-section {
+      background: #faf8f7;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 22px;
+    }
+
+    .image-preview {
+      width: 150px;
+      height: 150px;
+      border-radius: 18px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 15px;
+      background: #eee;
+      border: 1px solid #ddd;
+    }
+
+    .no-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 18px;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      color: #888;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .file-label {
+      display: block;
+      text-align: center;
       background: white;
-      outline: none;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
     }
 
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: #8d426d;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
+    .file-label input {
+      display: none;
     }
 
     .field {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .field label {
       display: block;
-      font-size: 13px;
-      font-weight: bold;
       margin-bottom: 7px;
-      color: #555;
+      font-weight: bold;
+      color: #5b4351;
     }
 
-    .two {
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 13px;
+      padding: 13px 14px;
+      font-size: 15px;
+      background: white;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: #8b4771;
+      box-shadow: 0 0 0 3px rgba(139,71,113,.08);
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .two-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 15px;
     }
 
-    .bottom-actions {
+    .product-actions {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-top: 16px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid #eee;
     }
 
-    .save-all {
+    .empty {
+      background: white;
+      padding: 40px 20px;
+      border-radius: 20px;
+      text-align: center;
+      color: #777;
+    }
+
+    .save-bar {
       position: sticky;
-      bottom: 12px;
-      background: rgba(255,255,255,.95);
-      padding: 12px;
-      border-radius: 14px;
-      box-shadow: 0 5px 25px rgba(0,0,0,.15);
-      margin-bottom: 20px;
+      bottom: 15px;
       z-index: 20;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(10px);
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 5px 30px rgba(0,0,0,.15);
+      margin-top: 25px;
     }
 
-    .save-all button {
+    .save-bar button {
       width: 100%;
-      font-size: 16px;
-      padding: 15px;
+      font-size: 17px;
+      padding: 17px;
     }
 
     .message {
       position: fixed;
       left: 20px;
       right: 20px;
-      bottom: 20px;
-      background: #237a5b;
-      color: white;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: center;
-      transform: translateY(120px);
-      transition: .3s;
+      bottom: 25px;
       z-index: 100;
-      box-shadow: 0 5px 25px rgba(0,0,0,.2);
+      background: #3d8065;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 14px;
+      text-align: center;
+      transform: translateY(150px);
+      transition: .3s;
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
     }
 
     .message.show {
       transform: translateY(0);
     }
 
-    .empty {
-      text-align: center;
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      color: #777;
-    }
+    @media (max-width: 700px) {
 
-    @media (max-width: 600px) {
-      .two {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .two-columns {
         grid-template-columns: 1fr;
       }
 
-      .product-preview {
+      .product-head {
         align-items: flex-start;
       }
 
-      .product-preview img {
-        width: 90px;
-        height: 90px;
-      }
-
-      header h1 {
-        font-size: 24px;
+      .product-card {
+        padding: 16px;
       }
     }
   </style>
@@ -254,204 +290,265 @@
 
 <body>
 
-  <header>
+  <header class="header">
     <div class="container">
       <h1>پنل مدیریت آدور</h1>
-      <p>ویرایش عکس، نام، برند، قیمت و توضیحات محصولات</p>
+      <p>ویرایش و مدیریت محصولات، قیمت، برند، عکس و توضیحات</p>
+
+      <div class="top-actions">
+
+        <button class="btn btn-success" onclick="addProduct()">
+          ＋ افزودن محصول جدید
+        </button>
+
+        <a class="btn btn-light" href="index.html">
+          مشاهده سایت
+        </a>
+
+        <button class="btn btn-danger" onclick="resetProducts()">
+          بازگردانی اطلاعات اولیه
+        </button>
+
+      </div>
     </div>
   </header>
 
-  <main class="container">
 
-    <div class="top-actions">
-      <button class="btn btn-light" onclick="goToSite()">
-        مشاهده سایت
-      </button>
+  <main class="container" style="padding:25px 0 60px;">
 
-      <button class="btn btn-green" onclick="saveAll()">
-        ذخیره همه تغییرات
-      </button>
-
-      <button class="btn btn-danger" onclick="resetAll()">
-        بازگردانی اطلاعات اولیه
-      </button>
+    <div class="products-count" id="productsCount">
+      تعداد محصولات: ۰
     </div>
 
     <div id="productsContainer"></div>
 
-    <div class="save-all">
-      <button class="btn btn-primary" onclick="saveAll()">
+    <div class="save-bar">
+      <button class="btn btn-primary" onclick="saveProducts()">
         💾 ذخیره همه تغییرات
       </button>
     </div>
 
   </main>
 
+
   <div class="message" id="message"></div>
 
-  <script>
 
-    /*
-      ============================================================
-      اطلاعات اولیه محصولات آدور
-      ============================================================
-    */
+<script>
 
-    const defaultProducts = [
-      {
-        id: 1,
-        brand: "LANCOME",
-        title: "Advanced Génifique Youth Activating Serum",
-        category: "skin",
-        categoryLabel: "مراقبت پوست",
-        description: "سرم محبوب برای روتین مراقبت و ایجاد ظاهری شاداب‌تر و جوان‌تر.",
-        price: 4850000,
-        badge: "پرفروش",
-        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=90"
-      },
+  /*
+   ============================================================
+   اطلاعات اولیه محصولات
+   ============================================================
+  */
 
-      {
-        id: 2,
-        brand: "LA ROCHE-POSAY",
-        title: "Toleriane Hydrating Care",
-        category: "skin",
-        categoryLabel: "مراقبت پوست",
-        description: "انتخابی مناسب برای روتین آبرسانی و مراقبت روزانه پوست.",
-        price: 2650000,
-        badge: "محبوب",
-        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&q=90"
-      },
+  const defaultProducts = [
 
-      {
-        id: 3,
-        brand: "KÉRASTASE",
-        title: "Nutritive Hair Care",
-        category: "hair",
-        categoryLabel: "مراقبت مو",
-        description: "مراقبت تغذیه‌ای برای موهای خشک و نیازمند لطافت بیشتر.",
-        price: 3950000,
-        badge: "منتخب",
-        image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=800&q=90"
-      },
+    {
+      id: 1,
+      brand: "LANCOME",
+      title: "Advanced Génifique Youth Activating Serum",
+      category: "skin",
+      categoryLabel: "مراقبت پوست",
+      description: "سرم محبوب برای روتین مراقبت و ایجاد ظاهری شاداب‌تر و جوان‌تر.",
+      price: 4850000,
+      badge: "پرفروش",
+      image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=90"
+    },
 
-      {
-        id: 4,
-        brand: "CHANEL",
-        title: "Allure Eau de Parfum",
-        category: "perfume",
-        categoryLabel: "عطر",
-        description: "رایحه‌ای شیک و ماندگار برای کسانی که انتخاب کلاسیک را می‌پسندند.",
-        price: 12800000,
-        badge: "لوکس",
-        image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=90"
-      },
+    {
+      id: 2,
+      brand: "LA ROCHE-POSAY",
+      title: "Toleriane Hydrating Care",
+      category: "skin",
+      categoryLabel: "مراقبت پوست",
+      description: "انتخابی مناسب برای روتین آبرسانی و مراقبت روزانه پوست.",
+      price: 2650000,
+      badge: "محبوب",
+      image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&q=90"
+    },
 
-      {
-        id: 5,
-        brand: "DIOR",
-        title: "Capture Youth Skin Care",
-        category: "skin",
-        categoryLabel: "جوانساز",
-        description: "محصولی لوکس برای تکمیل روتین مراقبت و جوانسازی پوست.",
-        price: 6900000,
-        badge: "جدید",
-        image: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=800&q=90"
-      },
+    {
+      id: 3,
+      brand: "KÉRASTASE",
+      title: "Nutritive Hair Care",
+      category: "hair",
+      categoryLabel: "مراقبت مو",
+      description: "مراقبت تغذیه‌ای برای موهای خشک و نیازمند لطافت بیشتر.",
+      price: 3950000,
+      badge: "منتخب",
+      image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=800&q=90"
+    },
 
-      {
-        id: 6,
-        brand: "LANCOME",
-        title: "Rénergie Multi-Lift Cream",
-        category: "skin",
-        categoryLabel: "جوانساز",
-        description: "کرم مراقبتی لوکس برای پوست‌های بالغ و روتین ضدچروک.",
-        price: 7250000,
-        badge: "منتخب آدور",
-        image: "https://images.unsplash.com/photo-1556228578-5b2b3b1b1a1d?auto=format&fit=crop&w=800&q=90"
-      },
+    {
+      id: 4,
+      brand: "CHANEL",
+      title: "Allure Eau de Parfum",
+      category: "perfume",
+      categoryLabel: "عطر",
+      description: "رایحه‌ای شیک و ماندگار برای کسانی که انتخاب کلاسیک را می‌پسندند.",
+      price: 12800000,
+      badge: "لوکس",
+      image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=90"
+    },
 
-      {
-        id: 7,
-        brand: "OLAPLEX",
-        title: "Bond Maintenance Hair Care",
-        category: "hair",
-        categoryLabel: "مراقبت مو",
-        description: "برای مراقبت از موهایی که در اثر رنگ و حرارت نیازمند توجه بیشتر هستند.",
-        price: 3200000,
-        badge: "محبوب",
-        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=90"
-      },
+    {
+      id: 5,
+      brand: "DIOR",
+      title: "Capture Youth Skin Care",
+      category: "skin",
+      categoryLabel: "جوانساز",
+      description: "محصولی لوکس برای تکمیل روتین مراقبت و جوانسازی پوست.",
+      price: 6900000,
+      badge: "جدید",
+      image: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=800&q=90"
+    },
 
-      {
-        id: 8,
-        brand: "YSL",
-        title: "Libre Eau de Parfum",
-        category: "perfume",
-        categoryLabel: "عطر",
-        description: "رایحه‌ای مدرن و جذاب برای استفاده روزمره و موقعیت‌های خاص.",
-        price: 9800000,
-        badge: "پرفروش",
-        image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=90"
-      }
-    ];
+    {
+      id: 6,
+      brand: "LANCOME",
+      title: "Rénergie Multi-Lift Cream",
+      category: "skin",
+      categoryLabel: "جوانساز",
+      description: "کرم مراقبتی لوکس برای پوست‌های بالغ و روتین ضدچروک.",
+      price: 7250000,
+      badge: "منتخب آدور",
+      image: "https://images.unsplash.com/photo-1556228578-5b2b3b1b1a1d?auto=format&fit=crop&w=800&q=90"
+    },
 
+    {
+      id: 7,
+      brand: "OLAPLEX",
+      title: "Bond Maintenance Hair Care",
+      category: "hair",
+      categoryLabel: "مراقبت مو",
+      description: "برای مراقبت از موهایی که در اثر رنگ و حرارت نیازمند توجه بیشتر هستند.",
+      price: 3200000,
+      badge: "محبوب",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=90"
+    },
 
-    /*
-      ============================================================
-      دریافت اطلاعات ذخیره‌شده
-      ============================================================
-    */
+    {
+      id: 8,
+      brand: "YSL",
+      title: "Libre Eau de Parfum",
+      category: "perfume",
+      categoryLabel: "عطر",
+      description: "رایحه‌ای مدرن و جذاب برای استفاده روزمره و موقعیت‌های خاص.",
+      price: 9800000,
+      badge: "پرفروش",
+      image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=90"
+    }
 
-    let products = JSON.parse(
-      localStorage.getItem("adorProducts")
-    ) || JSON.parse(JSON.stringify(defaultProducts));
+  ];
 
 
-    /*
-      ============================================================
-      نمایش محصولات
-      ============================================================
-    */
+  /*
+   ============================================================
+   بارگذاری محصولات
+   ============================================================
+  */
 
-    function renderProducts() {
+  let products = [];
 
-      const container = document.getElementById("productsContainer");
+  function loadProducts() {
 
-      if (!products.length) {
-        container.innerHTML = `
-          <div class="empty">
-            محصولی وجود ندارد.
-          </div>
-        `;
-        return;
+    const saved = localStorage.getItem("ador_products");
+
+    if (saved) {
+
+      try {
+        products = JSON.parse(saved);
+
+      } catch (error) {
+
+        products = JSON.parse(JSON.stringify(defaultProducts));
+
       }
 
-      container.innerHTML = products.map((product, index) => `
+    } else {
 
-        <div class="product-card">
+      products = JSON.parse(JSON.stringify(defaultProducts));
 
-          <div class="product-header">
+    }
 
-            <div class="product-number">
+    renderProducts();
+  }
+
+
+  /*
+   ============================================================
+   نمایش محصولات
+   ============================================================
+  */
+
+  function renderProducts() {
+
+    const container = document.getElementById("productsContainer");
+
+    document.getElementById("productsCount").textContent =
+      "تعداد محصولات: " +
+      new Intl.NumberFormat("fa-IR").format(products.length);
+
+
+    if (!products.length) {
+
+      container.innerHTML = `
+        <div class="empty">
+          هنوز محصولی وجود ندارد.
+          <br><br>
+          روی «افزودن محصول جدید» بزنید.
+        </div>
+      `;
+
+      return;
+    }
+
+
+    container.innerHTML = products.map((product, index) => {
+
+      const image = product.image || "";
+
+      return `
+
+        <section class="product-card">
+
+          <div class="product-head">
+
+            <h2>
+              ${escapeHtml(product.title || "محصول جدید")}
+            </h2>
+
+            <span class="product-number">
               محصول ${index + 1}
-            </div>
+            </span>
 
           </div>
 
 
-          <div class="product-preview">
+          <div class="image-section">
 
-            <img
-              id="preview-${product.id}"
-              src="${product.image}"
-              alt="${product.title}"
-            >
+            ${
+              image
+              ?
+              `<img
+                id="preview-${product.id}"
+                class="image-preview"
+                src="${escapeAttribute(image)}"
+                alt="تصویر محصول"
+              >`
+              :
+              `<div
+                id="preview-${product.id}"
+                class="no-image">
+                هنوز عکسی انتخاب نشده
+              </div>`
+            }
 
-            <div class="image-actions">
 
-              <strong>
-                عکس محصول
-              </strong>
+            <label class="file-label">
+
+              🖼️ انتخاب عکس از گوشی
 
               <input
                 type="file"
@@ -459,27 +556,22 @@
                 onchange="changeImage(event, ${product.id})"
               >
 
-              <small>
-                از گالری گوشی یک عکس انتخاب کنید.
-              </small>
-
-            </div>
+            </label>
 
           </div>
 
 
-          <div class="two">
+          <div class="two-columns">
 
             <div class="field">
 
-              <label>
-                برند
-              </label>
+              <label>برند</label>
 
               <input
-                id="brand-${product.id}"
                 type="text"
-                value="${escapeHtml(product.brand)}"
+                value="${escapeAttribute(product.brand || "")}"
+                oninput="updateProduct(${product.id}, 'brand', this.value)"
+                placeholder="مثلاً DIOR"
               >
 
             </div>
@@ -487,14 +579,13 @@
 
             <div class="field">
 
-              <label>
-                نام محصول
-              </label>
+              <label>نام محصول</label>
 
               <input
-                id="title-${product.id}"
                 type="text"
-                value="${escapeHtml(product.title)}"
+                value="${escapeAttribute(product.title || "")}"
+                oninput="updateProduct(${product.id}, 'title', this.value)"
+                placeholder="نام محصول"
               >
 
             </div>
@@ -502,18 +593,17 @@
           </div>
 
 
-          <div class="two">
+          <div class="two-columns">
 
             <div class="field">
 
-              <label>
-                قیمت به تومان
-              </label>
+              <label>قیمت به تومان</label>
 
               <input
-                id="price-${product.id}"
                 type="number"
-                value="${product.price}"
+                value="${Number(product.price) || 0}"
+                oninput="updateProduct(${product.id}, 'price', Number(this.value))"
+                placeholder="مثلاً 5000000"
               >
 
             </div>
@@ -521,14 +611,74 @@
 
             <div class="field">
 
-              <label>
-                برچسب محصول
-              </label>
+              <label>برچسب محصول</label>
 
               <input
-                id="badge-${product.id}"
                 type="text"
-                value="${escapeHtml(product.badge)}"
+                value="${escapeAttribute(product.badge || "")}"
+                oninput="updateProduct(${product.id}, 'badge', this.value)"
+                placeholder="مثلاً جدید"
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="two-columns">
+
+            <div class="field">
+
+              <label>دسته‌بندی</label>
+
+              <select
+                onchange="updateCategory(${product.id}, this.value)"
+              >
+
+                <option
+                  value="skin"
+                  ${product.category === "skin" ? "selected" : ""}>
+                  مراقبت پوست
+                </option>
+
+                <option
+                  value="hair"
+                  ${product.category === "hair" ? "selected" : ""}>
+                  مراقبت مو
+                </option>
+
+                <option
+                  value="perfume"
+                  ${product.category === "perfume" ? "selected" : ""}>
+                  عطر
+                </option>
+
+                <option
+                  value="beauty"
+                  ${product.category === "beauty" ? "selected" : ""}>
+                  آرایشی و بهداشتی
+                </option>
+
+                <option
+                  value="antiaging"
+                  ${product.category === "antiaging" ? "selected" : ""}>
+                  جوانساز
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>عنوان دسته‌بندی</label>
+
+              <input
+                type="text"
+                value="${escapeAttribute(product.categoryLabel || "")}"
+                oninput="updateProduct(${product.id}, 'categoryLabel', this.value)"
+                placeholder="مثلاً مراقبت پوست"
               >
 
             </div>
@@ -538,238 +688,366 @@
 
           <div class="field">
 
-            <label>
-              توضیحات محصول
-            </label>
+            <label>توضیحات محصول</label>
 
             <textarea
-              id="description-${product.id}"
-            >${escapeHtml(product.description)}</textarea>
+              oninput="updateProduct(${product.id}, 'description', this.value)"
+              placeholder="توضیحات محصول را بنویسید..."
+            >${escapeHtml(product.description || "")}</textarea>
 
           </div>
 
 
-          <div class="bottom-actions">
+          <div class="product-actions">
 
             <button
-              class="btn btn-primary"
-              onclick="saveProduct(${product.id})"
-            >
-              💾 ذخیره این محصول
+              class="btn btn-danger"
+              onclick="deleteProduct(${product.id})">
+              🗑️ حذف محصول
             </button>
 
           </div>
 
-        </div>
+        </section>
 
-      `).join("");
-    }
+      `;
+
+    }).join("");
+
+  }
 
 
-    /*
-      ============================================================
-      تغییر عکس
-      ============================================================
-    */
+  /*
+   ============================================================
+   تغییر اطلاعات محصول
+   ============================================================
+  */
 
-    function changeImage(event, id) {
+  function updateProduct(id, field, value) {
 
-      const file = event.target.files[0];
+    const product = products.find(p => p.id === id);
 
-      if (!file) return;
+    if (!product) return;
 
-      if (!file.type.startsWith("image/")) {
-        showMessage("لطفاً یک فایل تصویری انتخاب کنید.");
-        return;
+    product[field] = value;
+
+  }
+
+
+  function updateCategory(id, value) {
+
+    const product = products.find(p => p.id === id);
+
+    if (!product) return;
+
+    product.category = value;
+
+
+    const labels = {
+      skin: "مراقبت پوست",
+      hair: "مراقبت مو",
+      perfume: "عطر",
+      beauty: "آرایشی و بهداشتی",
+      antiaging: "جوانساز"
+    };
+
+    product.categoryLabel = labels[value] || "";
+
+    renderProducts();
+
+  }
+
+
+  /*
+   ============================================================
+   افزودن محصول جدید
+   ============================================================
+  */
+
+  function addProduct() {
+
+    const newId =
+      products.length
+      ? Math.max(...products.map(p => Number(p.id) || 0)) + 1
+      : 1;
+
+
+    const newProduct = {
+
+      id: newId,
+
+      brand: "",
+
+      title: "محصول جدید",
+
+      category: "skin",
+
+      categoryLabel: "مراقبت پوست",
+
+      description: "",
+
+      price: 0,
+
+      badge: "جدید",
+
+      image: ""
+
+    };
+
+
+    products.push(newProduct);
+
+    renderProducts();
+
+    setTimeout(() => {
+
+      const cards =
+        document.querySelectorAll(".product-card");
+
+      if (cards.length) {
+
+        cards[cards.length - 1].scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
       }
 
-      const reader = new FileReader();
+    }, 100);
 
-      reader.onload = function(e) {
 
-        const product = products.find(p => p.id === id);
+    showMessage("محصول جدید اضافه شد.");
 
-        if (!product) return;
+  }
 
-        product.image = e.target.result;
 
-        const preview = document.getElementById("preview-" + id);
+  /*
+   ============================================================
+   حذف محصول
+   ============================================================
+  */
 
-        if (preview) {
-          preview.src = product.image;
-        }
+  function deleteProduct(id) {
 
-        showMessage("عکس محصول تغییر کرد. برای ثبت نهایی ذخیره را بزنید.");
-      };
+    const product = products.find(p => p.id === id);
 
-      reader.readAsDataURL(file);
+    if (!product) return;
+
+
+    const confirmed = confirm(
+      "آیا از حذف این محصول مطمئن هستید؟"
+    );
+
+
+    if (!confirmed) return;
+
+
+    products = products.filter(p => p.id !== id);
+
+    renderProducts();
+
+    showMessage("محصول حذف شد.");
+
+  }
+
+
+  /*
+   ============================================================
+   انتخاب عکس از گوشی
+   ============================================================
+  */
+
+  function changeImage(event, id) {
+
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+
+    if (!file.type.startsWith("image/")) {
+
+      alert("لطفاً یک فایل تصویری انتخاب کنید.");
+
+      return;
+
     }
 
 
-    /*
-      ============================================================
-      ذخیره یک محصول
-      ============================================================
-    */
+    const reader = new FileReader();
 
-    function saveProduct(id) {
 
-      const product = products.find(p => p.id === id);
+    reader.onload = function(e) {
+
+      const imageData = e.target.result;
+
+
+      const product =
+        products.find(p => p.id === id);
+
 
       if (!product) return;
 
 
-      product.brand =
-        document.getElementById("brand-" + id).value.trim();
+      product.image = imageData;
 
 
-      product.title =
-        document.getElementById("title-" + id).value.trim();
+      const oldPreview =
+        document.getElementById("preview-" + id);
 
 
-      product.price =
-        Number(document.getElementById("price-" + id).value) || 0;
+      if (oldPreview) {
+
+        if (oldPreview.tagName === "IMG") {
+
+          oldPreview.src = imageData;
+
+        } else {
+
+          const img = document.createElement("img");
+
+          img.id = "preview-" + id;
+
+          img.className = "image-preview";
+
+          img.src = imageData;
+
+          img.alt = "تصویر محصول";
+
+          oldPreview.replaceWith(img);
+
+        }
+
+      }
+
+      showMessage("عکس محصول انتخاب شد.");
+
+    };
 
 
-      product.badge =
-        document.getElementById("badge-" + id).value.trim();
+    reader.readAsDataURL(file);
+
+  }
 
 
-      product.description =
-        document.getElementById("description-" + id).value.trim();
+  /*
+   ============================================================
+   ذخیره
+   ============================================================
+  */
 
+  function saveProducts() {
+
+    try {
 
       localStorage.setItem(
-        "adorProducts",
+        "ador_products",
         JSON.stringify(products)
       );
 
 
-      showMessage("محصول با موفقیت ذخیره شد.");
-    }
-
-
-    /*
-      ============================================================
-      ذخیره همه محصولات
-      ============================================================
-    */
-
-    function saveAll() {
-
-      products.forEach(product => {
-
-        const brand = document.getElementById("brand-" + product.id);
-        const title = document.getElementById("title-" + product.id);
-        const price = document.getElementById("price-" + product.id);
-        const badge = document.getElementById("badge-" + product.id);
-        const description = document.getElementById("description-" + product.id);
-
-        if (brand) product.brand = brand.value.trim();
-        if (title) product.title = title.value.trim();
-        if (price) product.price = Number(price.value) || 0;
-        if (badge) product.badge = badge.value.trim();
-        if (description) product.description = description.value.trim();
-
-      });
-
-
-      localStorage.setItem(
-        "adorProducts",
-        JSON.stringify(products)
+      showMessage(
+        "تغییرات با موفقیت در این مرورگر ذخیره شد."
       );
 
+    } catch (error) {
 
-      showMessage("تمام تغییرات با موفقیت ذخیره شد.");
-    }
-
-
-    /*
-      ============================================================
-      بازگردانی اطلاعات اولیه
-      ============================================================
-    */
-
-    function resetAll() {
-
-      const ok = confirm(
-        "آیا مطمئن هستید؟ تمام تغییرات ذخیره‌شده حذف می‌شود."
+      alert(
+        "ذخیره انجام نشد. احتمالاً حجم عکس‌های انتخاب‌شده زیاد است."
       );
 
-      if (!ok) return;
-
-      localStorage.removeItem("adorProducts");
-
-      products = JSON.parse(
-        JSON.stringify(defaultProducts)
-      );
-
-      renderProducts();
-
-      showMessage("اطلاعات اولیه بازگردانی شد.");
     }
 
-
-    /*
-      ============================================================
-      رفتن به سایت
-      ============================================================
-    */
-
-    function goToSite() {
-
-      window.location.href = "index.html";
-
-    }
+  }
 
 
-    /*
-      ============================================================
-      پیام
-      ============================================================
-    */
+  /*
+   ============================================================
+   بازگردانی اطلاعات اولیه
+   ============================================================
+  */
 
-    function showMessage(text) {
+  function resetProducts() {
 
-      const message = document.getElementById("message");
-
-      message.textContent = text;
-
-      message.classList.add("show");
-
-      setTimeout(() => {
-        message.classList.remove("show");
-      }, 2500);
-    }
+    const confirmed = confirm(
+      "همه تغییرات حذف می‌شوند و محصولات اولیه برمی‌گردند. ادامه می‌دهید؟"
+    );
 
 
-    /*
-      ============================================================
-      جلوگیری از مشکل HTML
-      ============================================================
-    */
-
-    function escapeHtml(text) {
-
-      return String(text)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
-    }
+    if (!confirmed) return;
 
 
-    /*
-      ============================================================
-      شروع پنل
-      ============================================================
-    */
+    products =
+      JSON.parse(JSON.stringify(defaultProducts));
+
+
+    localStorage.removeItem("ador_products");
 
     renderProducts();
 
-  </script>
+    showMessage("اطلاعات اولیه بازگردانی شد.");
+
+  }
+
+
+  /*
+   ============================================================
+   پیام
+   ============================================================
+  */
+
+  function showMessage(text) {
+
+    const message =
+      document.getElementById("message");
+
+    message.textContent = text;
+
+    message.classList.add("show");
+
+
+    setTimeout(() => {
+
+      message.classList.remove("show");
+
+    }, 2500);
+
+  }
+
+
+  /*
+   ============================================================
+   امنیت نمایش متن
+   ============================================================
+  */
+
+  function escapeHtml(value) {
+
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  function escapeAttribute(value) {
+
+    return escapeHtml(value);
+
+  }
+
+
+  /*
+   ============================================================
+   شروع
+   ============================================================
+  */
+
+  loadProducts();
+
+</script>
 
 </body>
 </html>
