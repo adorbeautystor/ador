@@ -1037,10 +1037,11 @@ async function saveProducts() {
           .select("id")
           .single();
       }
-
-      if (result.error) {
-        throw result.error;
-      }
+if (result.error) {
+  alert("خطای Supabase: " + result.error.message);
+  throw result.error;
+}
+      
 
       p.dbId = result.data.id;
     }
