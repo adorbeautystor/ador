@@ -299,6 +299,19 @@
 
 <body>
 
+<div id="loginBox" style="max-width:420px;margin:60px auto;padding:25px;background:white;border-radius:18px;font-family:Tahoma,Arial,sans-serif;color:#382632;">
+  <h2 style="text-align:center;color:#67264f;">ورود مدیر آدور</h2>
+  <p style="text-align:center;">برای مدیریت محصولات وارد شوید.</p>
+  <form id="loginForm">
+    <label for="adminEmail">ایمیل مدیر</label>
+    <input id="adminEmail" type="email" required autocomplete="username" style="display:block;width:100%;padding:12px;margin:7px 0 15px;box-sizing:border-box;">
+    <label for="adminPassword">رمز عبور</label>
+    <input id="adminPassword" type="password" required autocomplete="current-password" style="display:block;width:100%;padding:12px;margin:7px 0 15px;box-sizing:border-box;">
+    <button type="submit" style="width:100%;padding:14px;background:#67264f;color:white;border:0;border-radius:10px;">ورود به مدیریت</button>
+    <p id="loginError" style="color:#b74652;"></p>
+  </form>
+</div>
+<div id="adminPanel" style="display:none;">
   <header class="header">
     <div class="container">
       <h1>پنل مدیریت آدور</h1>
@@ -358,6 +371,37 @@ const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
+
+document.getElementById("loginForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("adminEmail").value.trim();
+  const password = document.getElementById("adminPassword").value;
+  const errorBox = document.getElementById("loginError");
+
+  errorBox.textContent = "در حال بررسی ورود...";
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email: email,
+    password: password
+  });
+
+  if (error) {
+    errorBox.textContent = "ورود ناموفق بود. ایمیل و رمز را بررسی کنید.";
+    return;
+  }
+
+  if (!data.user || data.user.id !== "554ff8aa-b077-487b-8d2d-c589468f545d") {
+    await supabaseClient.auth.signOut();
+    errorBox.textContent = "این حساب اجازه مدیریت آدور را ندارد.";
+    return;
+  }
+
+  document.getElementById("loginBox").style.display = "none";
+  document.getElementById("adminPanel").style.display = "block";
+  errorBox.textContent = "";
+  loadProducts();
+});
 
 
   const defaultProducts = [
@@ -1063,9 +1107,9 @@ const supabaseClient = window.supabase.createClient(
    ============================================================
   */
 
-  loadProducts();
+  
 
 </script>
-
+</div>
 </body>
 </html>
