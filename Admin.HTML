@@ -997,30 +997,68 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
    ============================================================
   */
 
-  function saveProducts() {
 
-    try {
+async function saveProducts() {
+  try {
+    showMessage("در حال ذخیره آنلاین محصولات...");
 
-      localStorage.setItem(
-        "ador_products",
-        JSON.stringify(products)
-      );
+    // ذخیره پشتیبان در مرورگر گوشی
+    localStorage.setItem(
+      "ador_products",
+      JSON.stringify(products)
+    );
 
+    for (const p of products) {
+      const row = {
+        name: p.title || "",
+        brand: p.brand || "",
+        title: p.title || "",
+        category: p.category || "skin",
+        categoryLabel: p.categoryLabel || "",
+        description: p.description || "",
+        Price: Number(p.price) || 0,
+        badge: p.badge || "",
+        image_url: p.image || ""
+      };
 
-      showMessage(
-        "تغییرات با موفقیت در این مرورگر ذخیره شد."
-      );
+      let result;
 
-    } catch (error) {
+      if (p.dbId) {
+        result = await supabaseClient
+          .from("Project")
+          .update(row)
+          .eq("id", p.dbId)
+          .select("id")
+          .single();
+      } else {
+        result = await supabaseClient
+          .from("Project")
+          .insert(row)
+          .select("id")
+          .single();
+      }
 
-      alert(
-        "ذخیره انجام نشد. احتمالاً حجم عکس‌های انتخاب‌شده زیاد است."
-      );
+      if (result.error) {
+        throw result.error;
+      }
 
+      p.dbId = result.data.id;
     }
 
-  }
+    localStorage.setItem(
+      "ador_products",
+      JSON.stringify(products)
+    );
 
+    showMessage("محصولات با موفقیت در پایگاه داده آنلاین ذخیره شدند.");
+
+  } catch (error) {
+    console.error("Supabase save error:", error);
+    alert(
+      "ذخیره آنلاین انجام نشد. لطفاً اتصال و تنظیمات جدول Supabase را بررسی کنید."
+    );
+  }
+}
 
   /*
    ============================================================
