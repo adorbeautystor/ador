@@ -2665,9 +2665,10 @@ async function loadOnlineProducts() {
       renderProducts();
       updateCart();
     }
-  } catch (error) {
-    console.error("خطای دریافت محصولات آنلاین:", error);
-  }
+} catch (error) {
+  alert("خطای دریافت محصولات: " + error.message);
+  console.error("خطای دریافت محصولات آنلاین:", error);
+}
 }
     function formatPrice(price) {
       return new Intl.NumberFormat("fa-IR").format(price) + " تومان";
