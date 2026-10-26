@@ -2921,7 +2921,7 @@ async function loadOnlineProducts() {
     });
 
     document.querySelectorAll(".reveal, .stagger").forEach(el => observer.observe(el));
-
+loadOnlineProducts();
     renderProducts();
     updateCart();
   </script>
