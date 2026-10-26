@@ -366,6 +366,8 @@ const supabaseClient = window.supabase.createClient(
 );
 
 document.getElementById("loginForm").addEventListener("submit", async function(event) {
+alert("کد ورود اجرا شد");
+event.preventDefault();
   event.preventDefault();
 
   const email = document.getElementById("adminEmail").value.trim();
