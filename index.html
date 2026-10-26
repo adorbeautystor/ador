@@ -2520,6 +2520,13 @@
   </div>
 
   <script>
+    const SUPABASE_URL = "https://qybyvwwihobrjfxcxbap.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_RSzGYoGWjgewroz0ourSGg_4SBhfths";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
     /*
       ============================================================
       بخش مدیریت محصولات
