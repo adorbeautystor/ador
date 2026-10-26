@@ -1053,11 +1053,14 @@ if (result.error) {
 
     showMessage("محصولات با موفقیت در پایگاه داده آنلاین ذخیره شدند.");
 
-  } catch (error) {
-    console.error("Supabase save error:", error);
-    alert(
-      "ذخیره آنلاین انجام نشد. لطفاً اتصال و تنظیمات جدول Supabase را بررسی کنید."
-    );
+} catch (error) {
+  console.error("Supabase save error:", error);
+  alert(
+    "خطای واقعی ذخیره‌سازی: " +
+    (error?.message || error?.details || String(error))
+  );
+}
+
   }
 }
 
