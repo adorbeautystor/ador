@@ -2640,6 +2640,35 @@ const supabaseClient = window.supabase.createClient(
     const toast = document.getElementById("toast");
 
     let cart = [];
+    async function loadOnlineProducts() {
+  try {
+    const { data, error } = await supabaseClient
+      .from("Project")
+      .select("*")
+      .order("id", { ascending: true });
+
+    if (error) throw error;
+
+    if (data && data.length > 0) {
+      products = data.map(p => ({
+        id: p.id,
+        brand: p.brand || "",
+        title: p.title || p.name || "",
+        category: p.category || "skin",
+        categoryLabel: p.categoryLabel || "",
+        description: p.description || "",
+        price: Number(p.Price) || 0,
+        badge: p.badge || "",
+        image: p.image_url || ""
+      }));
+
+      renderProducts();
+      updateCart();
+    }
+  } catch (error) {
+    console.error("خطای دریافت محصولات آنلاین:", error);
+  }
+}
 
     function formatPrice(price) {
       return new Intl.NumberFormat("fa-IR").format(price) + " تومان";
