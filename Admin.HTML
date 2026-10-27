@@ -1052,12 +1052,8 @@ if (result.error) {
 } catch (error) {
   console.error("Supabase save error:", error);
   alert(
-    "خطای واقعی ذخیره‌سازی: " +
-    (error?.message || error?.details || String(error))
+    "ذخیره آنلاین انجام نشد. لطفاً اتصال و تنظیمات جدول Supabase را بررسی کنید."
   );
-}
-
-  }
 }
 
   /*
